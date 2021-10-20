@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: "Inter", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+body {
+  font-weight: 400;
+  font-size: 14px;
+  background-color: $base;
+  padding: 2.5rem 1.5rem;
+  height: 100%;
+  &[data-theme="dark-mode"] {
+    background-color: $veryDarkBGBlue;
+  }
+}

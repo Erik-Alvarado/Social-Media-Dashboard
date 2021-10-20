@@ -1,0 +1,86 @@
+header {
+  display: flex;
+  flex-direction: column;
+  @include breakpoint-up(small) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  h4 {
+    color: $darkGrayBlue;
+  }
+}
+[data-theme="dark-mode"] header {
+  h4 {
+    color: $desatBlue;
+  }
+  h2 {
+    color: $base;
+  }
+  .bg-top {
+    background-color: $veryDarkTopBlue;
+  }
+}
+.bg-top {
+  display: none;
+  @include breakpoint-up(small) {
+    display: flex;
+    height: 20rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: $veryPaleTopBlue;
+  }
+}
+.social-nav {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $darkGrayBlue;
+  @include breakpoint-up(small) {
+    border-bottom: 0px solid transparent;
+  }
+  h2 {
+    font-size: 1.5rem;
+    color: $veryDarkBlue;
+  }
+}
+.toggle {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include breakpoint-up(small) {
+    justify-content: flex-end;
+  }
+  .slider {
+    background-color: $lightTheme;
+    padding: 3px;
+    border-radius: 5rem;
+    height: 1.325rem;
+    width: 2.75rem;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    @include breakpoint-up(small) {
+      margin-left: 1rem;
+    }
+
+    .circle {
+      border-radius: 5rem;
+      background-color: $base;
+      height: 15px;
+      width: 15px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &.dark {
+      background-image: $darkTheme;
+      background-color: transparent;
+      justify-content: flex-start;
+      .circle {
+        background-color: $veryDarkTopBlue;
+      }
+    }
+  }
+}

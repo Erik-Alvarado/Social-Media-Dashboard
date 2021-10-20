@@ -1,0 +1,207 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .ratio-up,
+  .ratio-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    img {
+      margin-right: 5px;
+    }
+  }
+  .ratio-down {
+    color: $brightRed;
+  }
+  .ratio-up {
+    color: $limeGreen;
+  }
+}
+[data-theme="dark-mode"] main {
+  .card {
+    background-color: $desatDarkBlue;
+    &:hover {
+      transform: scale(1.05);
+      background-color: $desatDarkHov;
+    }
+    .user {
+      color: $desatBlue;
+    }
+    .follow {
+      color: $desatBlue;
+      .value {
+        color: $base;
+      }
+    }
+  }
+  .overview {
+    h2 {
+      color: $base;
+    }
+    .over-contain {
+      .over-card {
+        background-color: $desatDarkBlue;
+        &:hover {
+          transform: scale(1.05);
+          background-color: $desatDarkHov;
+        }
+        .view {
+          color: $desatBlue;
+        }
+        .numbers {
+          color: $base;
+        }
+      }
+    }
+  }
+}
+
+.social-dash {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  text-align: center;
+  justify-items: center;
+  margin: 1.5rem 0;
+  width: 100%;
+  @include breakpoint-up(small) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .card {
+    width: 100%;
+    background-color: $lightGrayBlue;
+    border-top: 5px solid;
+    max-width: 21rem;
+    border-radius: 0.25rem;
+    height: 13rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: ease 0.3s;
+    @include breakpoint-up(small) {
+      margin-bottom: 0;
+    }
+    &:last-child {
+      margin-bottom: 0.5rem;
+      @include breakpoint-up(small) {
+        margin-bottom: auto;
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+      background-color: $lightGrayHov;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: $darkGrayBlue;
+      img {
+        margin-right: 5px;
+      }
+    }
+    .follow {
+      letter-spacing: 0.4rem;
+      text-transform: uppercase;
+      color: $darkGrayBlue;
+      h1 {
+        letter-spacing: normal;
+        font-size: 4rem;
+        color: $veryDarkBlue;
+      }
+    }
+    &#facebook {
+      border-color: $faceBook;
+    }
+    &#twitter {
+      border-color: $twitter;
+    }
+    &#instagram {
+      border: 0px;
+      position: relative;
+      .topbar {
+        height: 5px;
+        background-image: $instagram;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+    }
+    &#youtube {
+      border-color: $youtube;
+    }
+  }
+}
+
+.overview {
+  width: 100%;
+  margin-bottom: 1rem;
+  h2 {
+    font-size: 1.5rem;
+    color: $darkGrayBlue;
+    margin-bottom: 1.5rem;
+  }
+  .over-contain {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+    @include breakpoint-up(small) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    .over-card {
+      width: 100%;
+      margin-bottom: 1rem;
+      max-width: 21rem;
+      display: flex;
+      flex-direction: column;
+      background-color: $veryPaleTopBlue;
+      border-radius: 0.25rem;
+      padding: 1rem;
+      height: 7rem;
+      justify-content: space-between;
+      transition: ease 0.3s;
+      @include breakpoint-up(small) {
+        margin-bottom: 0;
+      }
+      &:hover {
+        transform: scale(1.05);
+        background-color: $lightGrayHov;
+      }
+      .top,
+      .bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        color: $darkGrayBlue;
+        .numbers {
+          font-size: 2rem;
+          color: $veryDarkBlue;
+        }
+        .percent-up,
+        .percent-down {
+          display: flex;
+          align-items: center;
+          img {
+            margin-right: 5px;
+          }
+        }
+        .percent-up {
+          color: $limeGreen;
+        }
+        .percent-down {
+          color: $brightRed;
+        }
+      }
+    }
+  }
+}
