@@ -26,6 +26,14 @@ body[data-theme="dark-mode"] {
   background-color: #1e202a;
 }
 
+@media (min-width: 64em) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -111,6 +119,12 @@ header h4 {
   display: flex;
   justify-content: flex-end;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  transition: ease 0.3s;
+}
+
+.toggle .slider:hover {
+  transition: ease 0.3s;
+  background-image: linear-gradient(45deg, #378fe6, #3eda82);
 }
 
 @media (min-width: 39.9375em) {
@@ -131,6 +145,10 @@ header h4 {
   background-image: linear-gradient(45deg, #378fe6, #3eda82);
   background-color: transparent;
   justify-content: flex-start;
+}
+
+.toggle .slider.dark:hover .circle {
+  background-color: #333a57;
 }
 
 .toggle .slider.dark .circle {
@@ -224,11 +242,22 @@ main .ratio-up {
   }
 }
 
+@media (min-width: 64em) {
+  .social-dash {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 87em) {
+  .social-dash {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .social-dash .card {
   width: 100%;
   background-color: #f0f2fa;
   border-top: 5px solid;
-  max-width: 21rem;
   border-radius: 0.25rem;
   height: 13rem;
   margin-bottom: 1.5rem;
@@ -241,6 +270,12 @@ main .ratio-up {
 @media (min-width: 39.9375em) {
   .social-dash .card {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 64em) {
+  .social-dash .card {
+    height: 15rem;
   }
 }
 
@@ -334,10 +369,21 @@ main .ratio-up {
   }
 }
 
+@media (min-width: 56.25em) {
+  .overview .over-contain {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 87em) {
+  .overview .over-contain {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 .overview .over-contain .over-card {
   width: 100%;
   margin-bottom: 1rem;
-  max-width: 21rem;
   display: flex;
   flex-direction: column;
   background-color: #f5f7ff;
@@ -351,6 +397,12 @@ main .ratio-up {
 @media (min-width: 39.9375em) {
   .overview .over-contain .over-card {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 64em) {
+  .overview .over-contain .over-card {
+    height: 8rem;
   }
 }
 

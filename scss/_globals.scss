@@ -22,4 +22,9 @@ body {
   &[data-theme="dark-mode"] {
     background-color: $veryDarkBGBlue;
   }
+  @include breakpoint-up(large) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }

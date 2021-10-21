@@ -71,11 +71,17 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+  @include breakpoint-up(large) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include breakpoint-up(x-large) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   .card {
     width: 100%;
     background-color: $lightGrayBlue;
     border-top: 5px solid;
-    max-width: 21rem;
+    // max-width: 21rem;
     border-radius: 0.25rem;
     height: 13rem;
     margin-bottom: 1.5rem;
@@ -85,6 +91,9 @@ main {
     transition: ease 0.3s;
     @include breakpoint-up(small) {
       margin-bottom: 0;
+    }
+    @include breakpoint-up(large) {
+      height: 15rem;
     }
     &:last-child {
       margin-bottom: 0.5rem;
@@ -157,10 +166,16 @@ main {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint-up(x-large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
     .over-card {
       width: 100%;
       margin-bottom: 1rem;
-      max-width: 21rem;
+      // max-width: 21rem;
       display: flex;
       flex-direction: column;
       background-color: $veryPaleTopBlue;
@@ -171,6 +186,9 @@ main {
       transition: ease 0.3s;
       @include breakpoint-up(small) {
         margin-bottom: 0;
+      }
+      @include breakpoint-up(large) {
+        height: 8rem;
       }
       &:hover {
         transform: scale(1.05);
